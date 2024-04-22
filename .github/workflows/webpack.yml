@@ -31,5 +31,5 @@ jobs:
       uses: actions/upload-artifact@v4.3.3
       with:
         name: site-build
-        path: ./build
+        path: ./public
         error: "No dice, bucko"

@@ -1,9 +1,9 @@
 const dotenv = require('dotenv')
-const isDev = process.env.NODE_ENV === "dev"
+const isDev = process.env.NODE_ENV === "devx"
 
 const esbuild = require("esbuild");
 async function watch() {
-  let ctx = await esbuild.context({
+  const options = ({
     entryPoints: ['src/app.tsx'],
     bundle: true,
     minify: isDev,
@@ -12,11 +12,12 @@ async function watch() {
     outfile: 'public/index.js',
   });
     if (isDev) {
+      const ctx = await esbuild.context(options)
       await ctx.watch();
       console.log('Watching...');
     }
     else {
-      await ctx.rebuild();
+      esbuild.build(options)
     }
 }
 watch();
