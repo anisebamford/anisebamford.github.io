@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 permissions:
-  GITHUB_TOKEN: pages-write
+  id-token: pages-write
 
 jobs:
   build:
