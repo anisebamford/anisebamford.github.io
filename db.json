@@ -1,0 +1,128 @@
+{
+  "name": "Anise Bamford",
+  "email": "anisebamford@gmail.com",
+  "address": "Corvallis, OR",
+  "phone": "(503) 327-6775",
+  "github": "https://github.com/anisebamford",
+  "linkedin": "https://linkedin.com/in/anisebamford-bab747229",
+  "title": "Web Developer",
+  "pronouns": "She / They",
+  "website": "anisebamford.github.io",
+  "professionalSummary": "I’m a lifelong computer nerd with a passion for clean, tested code and streamlined automation. I have a broad range of experience with both frontend and backend javascript and typescript systems, but my heart belongs to API-driven React apps.",
+  "jobs": [
+    {
+      "company": "Xolv.io",
+      "location": "California",
+      "position": "Web Developer",
+      "start": "April 2022",
+      "end": "February 2023",
+      "accomplishments": [
+        "I created the file tree structure for an internal code development tool built on an event sourced backend. Over the course of the project, I converted the system to use GraphQl to preserve the tree’s data structure and allow the file tree on the client’s side to be lazy loaded, ultimately resulting in a vast performance increase over the previous solution for both the server and the client.",
+        "I developed several sites for a major video game developer using automated server side rendering and caching to eliminate as much latency as possible for their consumers. Additionally, I reimplemented several overbuilt components of the site to improve both performance and reusability."
+      ]
+    },
+    {
+      "company": "Binary Agents",
+      "location": "Oregon",
+      "position": "Web Developer",
+      "start": "September 2016",
+      "end": "December 2021",
+      "accomplishments": [
+        "I migrated sites built on EOL platforms to modern and maintainable platforms, while preserving and enhancing their original functionality. I also implemented new responsive and accessible themes according to the client’s provided specifications.",
+        "I led the development of a specialized ERP platform built on a custom stack including Dgraph, NodeJs, Express, graphQl, and React. During the course of the project, I architected the data security systems that the project was started to implement."
+      ]
+    },
+    {
+      "company": "Bob's Red Mill",
+      "location": "Oregon",
+      "start": "January 2016",
+      "end": "September 2016",
+      "position": "Packaging Associate",
+      "accomplishments": [
+        "I led production on a packaging line, following procedures and guidelines to ensure quality in the end project while also maintaining an excellent pace.",
+        "I provided logistical support to the entire floor to minimize downtime for any station."
+      ]
+    },
+    {
+      "company": "Holiday Inn Express",
+      "location": "Idaho",
+      "start": "September 2014",
+      "end": "December 2015",
+      "position": "Night Auditor / Front Desk Agent",
+      "accomplishments": [
+        "I designed tools to streamline the end of day reporting workflow, improving my efficiency and reducing errors.",
+        "I maintained the property overnight, handling guest issues, closed the business day, preparing facilities for the next day, and tidying the property."
+      ]
+    },
+    {
+      "company": "Best Western Plus",
+      "location": "Idaho",
+      "start": "March 2012",
+      "end": "September 2014",
+      "position": "Night Auditor / Front Desk Agent",
+      "accomplishments": [
+        "I maintained the property overnight, handling guest issues, closed the business day, preparing facilities for the next day, and tidying the property."
+      ]
+    },
+    {
+      "company": "Black Dog Machine",
+      "location": "Idaho",
+      "start": "June 2010",
+      "end": "January 2012",
+      "position": "Assembler",
+      "accomplishments": [
+        "I redesigned several product workflows to improve efficency."
+      ]
+    }
+  ],
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "C++",
+    "CSS",
+    "HTML",
+    "PHP",
+    "PowerShell",
+    "React",
+    "Vue.js",
+    "NodeJs",
+    "GraphQL",
+    "REST API",
+    "Express",
+    "Drupal",
+    "Next.js",
+    "MySQL",
+    "PostgreSQL",
+    "MongoDb",
+    "Dgraph",
+    "Event Sourcing",
+    "Babel",
+    "Snowpack",
+    "Esbuild" ,
+    "Webpack",
+    "Rollup",
+    "AWS",
+    "Docker",
+    "Linux",
+    "Microsoft Word",
+    "Microsoft Excel",
+    "Microsoft Outlook",
+    "Figma",
+    "Slack",
+    "Git",
+    "Web Accessibility",
+    "Sass",
+    "DNS",
+    "Serverless",
+    "Socket.io",
+    "Automated Testing",
+    "Jest",
+    "Mocha",
+    "Storybook",
+    "Eslint",
+    "Prettier",
+    "Pinia",
+    "Vite SSG"
+  ]
+}
