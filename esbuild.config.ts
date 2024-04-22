@@ -11,7 +11,12 @@ async function watch() {
     sourcemap: isDev,
     outfile: 'public/index.js',
   });
-    await ctx.watch();
-    console.log('Watching...');
+    if (isDev) {
+      await ctx.watch();
+      console.log('Watching...');
+    }
+    else {
+      await ctx.rebuild();
+    }
 }
 watch();
