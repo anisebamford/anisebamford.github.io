@@ -7,7 +7,7 @@ import styles from "styled-components"
 
 const Style = styled.div`
   display: none;
-  @media(print) {
+  @media print {
     display: block;
   }
 `
