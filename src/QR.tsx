@@ -3,6 +3,14 @@ import qrcode from "qrcode";
 import { ResumeContext } from "./ResumeContext";
 import { CustomizationsContext } from "./CustomizationsContext";
 import { colorPrimary } from "./Main";
+import styles from "styled-components"
+
+const Style = styled.div`
+  display: none;
+  @media(print) {
+    display: block;
+  }
+`
 
 export function QR() {
   const ref = useRef<HTMLCanvasElement>();
@@ -14,5 +22,5 @@ export function QR() {
       qrcode.toCanvas(ref.current, `${resume.website}/?${customizations.queryString}`, {width: 200, color: {dark: colorPrimary}})
     }
   }, [ref, resume.website, customizations])
-  return <canvas width="200" height="200" ref={ref}/>
+  return <Style><canvas width="200" height="200" ref={ref}/></Style>
 }
