@@ -36,6 +36,7 @@ export function Main() {
       <MainStyles>
         <Header />
         <QR />
+        <SpanGridColumns><ProfessionalSummary /></SpanGridColumns>
         <SpanGridColumns><Skills /></SpanGridColumns>
         <SpanGridColumns><Jobs /></SpanGridColumns>
       </MainStyles>
