@@ -3,7 +3,7 @@ import qrcode from "qrcode";
 import { ResumeContext } from "./ResumeContext";
 import { CustomizationsContext } from "./CustomizationsContext";
 import { colorPrimary } from "./Main";
-import styles from "styled-components"
+import styled from "styled-components"
 
 const Style = styled.div`
   @media print {
