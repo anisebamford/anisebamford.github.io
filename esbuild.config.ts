@@ -1,15 +1,15 @@
 const dotenv = require('dotenv');
-const isDev = process.env.NODE_ENV === "devx"
 const fs = require("fs");
 const {randomUUID} = require("crypto");
 const esbuild = require("esbuild");
 
-async function watch() {
+async function build() {
+  const isDev = process.env.NODE_ENV === "dev"
   const token = randomUUID();
   const options = ({
     entryPoints: ['src/app.tsx'],
     bundle: true,
-    minify: isDev,
+    minify: !isDev,
     format: 'cjs',
     sourcemap: isDev,
     outfile: `public/index-${token}.js`,
@@ -36,4 +36,4 @@ async function watch() {
       esbuild.build(options)
     }
 }
-watch();
+build();

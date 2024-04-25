@@ -7,6 +7,7 @@ import { Jobs } from "./Jobs";
 import { CustomizationsContextProvider } from "./CustomizationsContextProvider";
 import { Header } from "./Header";
 import { QR } from "./QR";
+import { ProfessionalSummary } from "./ProfessionalSummary";
 
 export const colorPrimary = "#31005f"
 export const colorSecondary = "#6100bd"
