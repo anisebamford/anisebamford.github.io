@@ -14,13 +14,22 @@ export const colorPrimary = "#31005f"
 export const colorSecondary = "#6100bd"
 
 const MainStyles = styled.div`
+  @font-face {
+    font-family: text;
+    src: url(NotoSans.ttf);
+  }
+  @font-face {
+    font-family: title;
+    src: url(NotoSerif_Condensed-SemiBold.ttf);
+  }
   --text-color: black;
   --text-spacing: 0.75rem;
   --line-spacing: 0.25rem;
-  --text-font: roboto;
+  --text-font: text;
+  --title-font: title;
   --primary-color: ${colorPrimary};
   --secondary-color: ${colorSecondary};
-  font-family: var(--text-font, monospace);
+  font-family: text;
   color: var(--text-color, black);
 `
 

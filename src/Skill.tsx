@@ -5,6 +5,7 @@ import { CustomizationsContext } from "./CustomizationsContext"
 export const SkillStyle = styled.span`
   color: var(--text-color, black);
   font-family: var(--skill-font, --text-font, monospace);
+  font-size: 0.8rem;
 `
 
 export function Skill({skill}: {skill: string}) {

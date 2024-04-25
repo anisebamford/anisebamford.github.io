@@ -7,7 +7,7 @@ const SkillsStyle = styled.ul`
   flex-direction: column;
   @media screen and (min-width: 360px) {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(autofill, auto);
   }
   @media screen and (min-width: 720px) {

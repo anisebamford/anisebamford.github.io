@@ -6,7 +6,7 @@ const TitleStyle = styled.h1`
   font-size: 1.5rem;
   margin-top: var(--text-spacing);
   font-weight: bold;
-  font-family: var(--title-font, --text-font, monospace);
+  font-family: title;
 `
 
 export function MainTitle({children}: PropsWithChildren) {
