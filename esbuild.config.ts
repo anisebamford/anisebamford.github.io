@@ -1,4 +1,4 @@
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const fs = require("fs");
 const {randomUUID} = require("crypto");
 const esbuild = require("esbuild");
