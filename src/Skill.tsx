@@ -13,5 +13,5 @@ export function Skill({skill}: {skill: string}) {
   const onClick = useCallback(() => {
       highlightSkill(skill)
   }, [highlightSkill])
-  return <SkillStyle onClick={onClick}>{skill}</SkillStyle>
+  return <SkillStyle onClick={onClick} role="button" tabIndex={0} aria-pressed={false} >{skill}</SkillStyle>
 }

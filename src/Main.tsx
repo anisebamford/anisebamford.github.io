@@ -9,6 +9,7 @@ import { Header } from "./Header";
 import { QR } from "./QR";
 import { ProfessionalSummary } from "./ProfessionalSummary";
 import { Section } from "./Section";
+import { Education } from "./Education";
 
 export const colorPrimary = "#31005f"
 export const colorSecondary = "#6100bd"
@@ -39,10 +40,11 @@ export function Main() {
     <CustomizationsContextProvider>
       <Reset />
       <MainStyles>
-        <Section><Header /></Section>
+        <Header />
         <Section><ProfessionalSummary /></Section>
         <Section><Skills /></Section>
         <Section><Jobs /></Section>
+        <Education />
       </MainStyles>
     </CustomizationsContextProvider>
   </ResumeContextProvider>

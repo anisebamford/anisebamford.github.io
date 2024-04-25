@@ -24,8 +24,8 @@ export type Resume = {
   website: string,
   education: {
     school: string,
-    yearStart: string,
-    yearEnd: string,
+    startYear: string,
+    endYear: string,
     degree?: string,
     major: string,
   }[]

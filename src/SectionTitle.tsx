@@ -5,7 +5,7 @@ const TitleStyles = styled.h4`
   font-size: 1.5rem;
   color: var(--primary-color, --text-color, black);
   font-family: title;
-  margin-bottom: calc(var(--text-spacing) * 0.25);
+  margin-bottom: calc(var(--text-spacing) * 0.5);
 `
 
 export function SectionTitle({children}: PropsWithChildren) {

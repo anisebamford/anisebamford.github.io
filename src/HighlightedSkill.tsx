@@ -23,7 +23,7 @@ export function HighlightedSkill({skill}: {skill: string}) {
   const onError: ReactEventHandler<HTMLImageElement> = function (err) {
     (err.target as HTMLImageElement).style.display = "none"
   }
-  return <SkillStyle onClick={onClick}>
+  return <SkillStyle onClick={onClick} role="button" tabIndex={0} aria-pressed={true}>
     <span>{skill}</span>
     <img src={`${skill}.svg`} height="90px" width="90px" onError={onError}/>
   </SkillStyle>

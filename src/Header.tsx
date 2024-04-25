@@ -7,6 +7,7 @@ import { Link } from "./Link";
 import { Phone } from "./Phone";
 import { Email } from "./Email";
 import { QR } from "./QR";
+import { Section } from "./Section";
 
 const HeaderStyle = styled.div`
   display: grid;
@@ -25,17 +26,19 @@ const HeaderTextStyle = styled.div`
 export function Header() {
   const resume = useContext(ResumeContext);
   const customizations = useContext(CustomizationsContext);
-  return <HeaderStyle>
-    <HeaderTextStyle>
-    <MainTitle>{resume.name}</MainTitle>
-    <span>{resume.pronouns}</span>
-    <span>{resume.address}</span>
-    <Email address={resume.email} />
-    <Phone number={resume.phone} />
-    <Link href={`${resume.website}/?${customizations.queryString}`} title={resume.website} icon="Website.svg" />
-    <Link href={resume.linkedin} icon="LinkedIn.svg"/>
-    <Link href={resume.github} icon="Github.svg"/>
-    </HeaderTextStyle>
-    <QR />
-  </HeaderStyle>
+  return <Section>
+    <HeaderStyle>
+      <HeaderTextStyle>
+      <MainTitle>{resume.name}</MainTitle>
+      <span>{resume.pronouns}</span>
+      <span>{resume.address}</span>
+      <Email address={resume.email} />
+      <Phone number={resume.phone} />
+      <Link href={`${resume.website}/?${customizations.queryString}`} title={resume.website} icon="Website.svg" />
+      <Link href={resume.linkedin} icon="LinkedIn.svg"/>
+      <Link href={resume.github} icon="Github.svg"/>
+      </HeaderTextStyle>
+      <QR />
+    </HeaderStyle>
+  </Section>
 }

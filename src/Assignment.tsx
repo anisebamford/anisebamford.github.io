@@ -2,16 +2,15 @@ import React from "react";
 import { Assignment as TAssignment } from "./ResumeContext";
 import styled from "styled-components";
 import { Separator } from "./Separator";
+import { ElementTitle } from "./ElementTitle";
 
-const CompanyName = styled.h4`
-  font-size: 1.3rem;
-  display: inline;
-  color: var(--secondary-color, --text-color, black);
-  font-weight: bold;
+const AssignmentStyle = styled.div`
+  page-break-inside: avoid;
+  margin-bottom: var(--text-spacing);
 `
 
 const Position = styled.h4`
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   display: inline;
   color: var(--secondary-color, --text-color, black);
   font-style: italic;
@@ -30,9 +29,9 @@ const Accomplishment = styled.div`
 export function Assignment({assignment}: {assignment: TAssignment}) {
   const {company, location, start, end, position, accomplishments} = assignment;
 
-  return <div>
-    <CompanyName>{company}, {location}</CompanyName> - <Position>{position}</Position><br />
+  return <AssignmentStyle>
+    <ElementTitle>{company}, {location}</ElementTitle> - <Position>{position}</Position><br />
     <DateRange>{start}{end ? ` - ${end}` : ""}</DateRange><br />
     {accomplishments.map((item, index) => <Accomplishment key={index}><Separator />{item}</Accomplishment>)}
-  </div>
+  </AssignmentStyle>
 }

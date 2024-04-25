@@ -15,6 +15,11 @@ const SkillsStyle = styled.ul`
     flex-direction: row;
     flex-wrap: wrap;
   }
+  @media print {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   list-style: none;
   justify-content: center;
 `

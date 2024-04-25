@@ -53,8 +53,10 @@ export function CustomizationsContextProvider({children}: PropsWithChildren) {
   }, [updateCustomizations, customizations])
 
   const highlightSkill: Customizations["highlightSkill"] = useCallback((skill: string) => {
-    customizations.highlightedSkills.push(skill)
-    updateCustomizations(customizations)
+    if (customizations.highlightedSkills.length < 5) {
+      customizations.highlightedSkills.push(skill)
+      updateCustomizations(customizations)  
+    }
   }, [updateCustomizations, customizations])
 
   return <CustomizationsContext.Provider value={{
