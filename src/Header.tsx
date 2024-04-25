@@ -6,8 +6,15 @@ import { CustomizationsContext } from "./CustomizationsContext";
 import { Link } from "./Link";
 import { Phone } from "./Phone";
 import { Email } from "./Email";
+import { QR } from "./QR";
 
 const HeaderStyle = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+`
+
+const HeaderTextStyle = styled.div`
   display: flex;
   flex-direction: column;
   &>:not(:last-child) {
@@ -19,6 +26,7 @@ export function Header() {
   const resume = useContext(ResumeContext);
   const customizations = useContext(CustomizationsContext);
   return <HeaderStyle>
+    <HeaderTextStyle>
     <MainTitle>{resume.name}</MainTitle>
     <span>{resume.pronouns}</span>
     <span>{resume.address}</span>
@@ -27,5 +35,7 @@ export function Header() {
     <Link href={`${resume.website}/?${customizations.queryString}`} title={resume.website} icon="Website.svg" />
     <Link href={resume.linkedin} icon="LinkedIn.svg"/>
     <Link href={resume.github} icon="Github.svg"/>
+    </HeaderTextStyle>
+    <QR />
   </HeaderStyle>
 }

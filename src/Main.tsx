@@ -8,6 +8,7 @@ import { CustomizationsContextProvider } from "./CustomizationsContextProvider";
 import { Header } from "./Header";
 import { QR } from "./QR";
 import { ProfessionalSummary } from "./ProfessionalSummary";
+import { Section } from "./Section";
 
 export const colorPrimary = "#31005f"
 export const colorSecondary = "#6100bd"
@@ -21,13 +22,6 @@ const MainStyles = styled.div`
   --secondary-color: ${colorSecondary};
   font-family: var(--text-font, monospace);
   color: var(--text-color, black);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: repeat(4, auto);
-`
-
-const SpanGridColumns = styled.div`
-  grid-column: 1 / 2;
 `
 
 export function Main() {
@@ -36,10 +30,9 @@ export function Main() {
       <Reset />
       <MainStyles>
         <Header />
-        <QR />
-        <SpanGridColumns><ProfessionalSummary /></SpanGridColumns>
-        <SpanGridColumns><Skills /></SpanGridColumns>
-        <SpanGridColumns><Jobs /></SpanGridColumns>
+        <Section><ProfessionalSummary /></Section>
+        <Section><Skills /></Section>
+        <Section><Jobs /></Section>
       </MainStyles>
     </CustomizationsContextProvider>
   </ResumeContextProvider>
