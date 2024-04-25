@@ -29,7 +29,7 @@ export function Main() {
     <CustomizationsContextProvider>
       <Reset />
       <MainStyles>
-        <Header />
+        <Section><Header /></Section>
         <Section><ProfessionalSummary /></Section>
         <Section><Skills /></Section>
         <Section><Jobs /></Section>

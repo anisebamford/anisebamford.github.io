@@ -4,8 +4,17 @@ import { SeparatedListItem } from "./SeparatedListItem";
 
 const SkillsStyle = styled.ul`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  @media screen and (min-width: 360px) {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(autofill, auto);
+  }
+  @media screen and (min-width: 720px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   list-style: none;
   justify-content: center;
 `

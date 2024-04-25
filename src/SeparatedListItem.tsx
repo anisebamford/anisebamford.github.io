@@ -5,12 +5,6 @@ const LiStyle = styled.li`
   flex-grow: 1;
   text-align: center;
   position: relative;
-  &[data-is-first-in-row="false"]::before {
-    content: "•";
-    position: absolute;
-    color: var(--text-color);
-    left: -0.2rem;
-  }
   &>* {
     padding-left: calc(var(--text-spacing, 1rem) * 2);
     padding-right: calc(var(--text-spacing, 1rem) * 2);
