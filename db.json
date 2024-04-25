@@ -125,5 +125,13 @@
     "Prettier",
     "Pinia",
     "Vite SSG"
+  ],
+  "education": [
+    {
+      "school": "LeTourneau University",
+      "yearStart": "2009",
+      "yearEnd": "2010",
+      "major": "Computer Science"
+    }
   ]
 }

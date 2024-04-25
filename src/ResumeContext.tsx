@@ -22,6 +22,13 @@ export type Resume = {
   address: string,
   phone: string,
   website: string,
+  education: {
+    school: string,
+    yearStart: string,
+    yearEnd: string,
+    degree?: string,
+    major: string,
+  }[]
 }
 
 export const ResumeContext = createContext<Resume>({
@@ -37,4 +44,5 @@ export const ResumeContext = createContext<Resume>({
   address: "Corvallis, OR 97330",
   phone: "(503) 327-6775",
   website: "",
+  education: [],
 })

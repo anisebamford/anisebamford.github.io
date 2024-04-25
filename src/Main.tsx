@@ -31,6 +31,7 @@ const MainStyles = styled.div`
   --secondary-color: ${colorSecondary};
   font-family: text;
   color: var(--text-color, black);
+  margin: calc(var(--text-spacing) * 2) calc(var(--text-spacing) * 2);
 `
 
 export function Main() {
