@@ -8,6 +8,8 @@ export type Customizations = {
   highlightSkill: (skill: string) => void,
   highlightAssignment: (assignment: string) => void,
   queryString: string,
+  isLoggedIn: boolean,
+  logIn: () => void,
 }
 
 export const CustomizationsContext = createContext<Customizations>({
@@ -18,4 +20,6 @@ export const CustomizationsContext = createContext<Customizations>({
   highlightAssignment: () => {},
   highlightSkill: () => {},
   queryString: "",
+  isLoggedIn: false,
+  logIn: () => {}
 })

@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useCallback, useEffect, useState } from "react";
 import { CustomizationsContext, Customizations } from "./CustomizationsContext";
 
-type CustomizationsData = Omit<Customizations, "queryString" | "resetSkill" | "resetAssignment" | "highlightSkill" | "highlightAssignment">;
+type CustomizationsData = Omit<Customizations, "isLoggedIn" | "logIn" | "queryString" | "resetSkill" | "resetAssignment" | "highlightSkill" | "highlightAssignment">; 
 
 export function CustomizationsContextProvider({children}: PropsWithChildren) {
   const [customizations, setCustomizations] = useState<CustomizationsData>({
@@ -10,6 +10,9 @@ export function CustomizationsContextProvider({children}: PropsWithChildren) {
   });
 
   const [queryString, setQueryString] = useState("")
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const logIn = () => setIsLoggedIn(true);
 
   useEffect(() => {
     const newCustomizationsFromUrl: CustomizationsData  = {
@@ -65,6 +68,8 @@ export function CustomizationsContextProvider({children}: PropsWithChildren) {
     resetAssignment,
     resetSkill,
     queryString,
+    isLoggedIn,
+    logIn,
     ...customizations}}>
     {children}
   </CustomizationsContext.Provider>

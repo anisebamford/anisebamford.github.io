@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef } from "react";
 import qrcode from "qrcode";
 import { ResumeContext } from "./ResumeContext";
 import { CustomizationsContext } from "./CustomizationsContext";
-import { colorPrimary } from "./Main";
+import { colorPrimary } from "./Resume";
 import styled from "styled-components"
 
 const Style = styled.div`
