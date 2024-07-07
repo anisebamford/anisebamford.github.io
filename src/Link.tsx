@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "./Icon";
 
-const A = styled.a`
+const Anchor = styled.a`
   display: flex;
   color: var(--link-color, --text-color, black);
   align-items: center;
@@ -12,8 +12,8 @@ const A = styled.a`
 `
 
 export function Link({href, title, icon}: {href: string, title?: string, icon?: string}) {
-  return <A href={href}>
-      {icon ?<Icon size="sm" src={icon} alt={`Icon for ${title || icon}`} /> : null}
+  return <Anchor href={href}>
+      {icon ? <Icon size="sm" src={icon} alt={`Icon for ${title || icon}`} /> : null}
       <span>{title || href}</span>
-    </A>
+    </Anchor>
 }

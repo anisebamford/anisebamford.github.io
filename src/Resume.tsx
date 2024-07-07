@@ -6,11 +6,9 @@ import styled from "styled-components"
 import { Jobs } from "./Jobs";
 import { CustomizationsContextProvider } from "./CustomizationsContextProvider";
 import { Header } from "./Header";
-import { QR } from "./QR";
 import { ProfessionalSummary } from "./ProfessionalSummary";
 import { Section } from "./Section";
 import { Education } from "./Education";
-import { Link } from "react-router-dom";
 
 export const colorPrimary = "#31005f"
 export const colorSecondary = "#6100bd"

@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import { Assignment as TAssignment } from "./ResumeContext";
 import styled from "styled-components";
 import { Separator } from "./Separator";
 import { ElementTitle } from "./ElementTitle";
+import { CustomizationsContext } from "./CustomizationsContext";
 
 const AssignmentStyle = styled.div`
   page-break-inside: avoid;
   margin-bottom: var(--text-spacing);
+  &[data-is-hidden="true"] {
+    @media print {
+      display: none;
+    }
+  }
 `
 
 const Position = styled.h4`
@@ -27,11 +33,14 @@ const Accomplishment = styled.div`
 `
 
 export function Assignment({assignment}: {assignment: TAssignment}) {
+  const {hiddenAssignments, toggleHideAssignment} = useContext(CustomizationsContext)
   const {company, location, start, end, position, accomplishments} = assignment;
 
-  return <AssignmentStyle>
+  const isHidden = hiddenAssignments.includes(company)
+
+  return <AssignmentStyle data-is-hidden={isHidden} onClick={() => toggleHideAssignment(company)}>
     <ElementTitle>{company}, {location}</ElementTitle> - <Position>{position}</Position><br />
     <DateRange>{start}{end ? ` - ${end}` : ""}</DateRange><br />
-    {accomplishments.map((item, index) => <Accomplishment key={index}><Separator />{item}</Accomplishment>)}
+    {isHidden ? null : accomplishments.map((item, index) => <Accomplishment key={index}><Separator />{item}</Accomplishment>)}
   </AssignmentStyle>
 }

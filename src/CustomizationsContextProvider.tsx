@@ -1,12 +1,21 @@
 import React, { PropsWithChildren, useCallback, useEffect, useState } from "react";
 import { CustomizationsContext, Customizations } from "./CustomizationsContext";
+import { v4 as uuid} from "uuid";
 
-type CustomizationsData = Omit<Customizations, "isLoggedIn" | "logIn" | "queryString" | "resetSkill" | "resetAssignment" | "highlightSkill" | "highlightAssignment">; 
+type CustomizationsData = Omit<Customizations, 
+  "isLoggedIn" |
+  "logIn" |
+  "queryString" |
+  "resetSkill" |
+  "resetAssignment" |
+  "highlightSkill" |
+  "toggleHideAssignment"> & {id?: string}; 
 
-export function CustomizationsContextProvider({children}: PropsWithChildren) {
+  export function CustomizationsContextProvider({children}: PropsWithChildren) {
   const [customizations, setCustomizations] = useState<CustomizationsData>({
-    highlightedAssignments: [],
+    hiddenAssignments: [],
     highlightedSkills: [],
+    id: ""
   });
 
   const [queryString, setQueryString] = useState("")
@@ -16,14 +25,18 @@ export function CustomizationsContextProvider({children}: PropsWithChildren) {
 
   useEffect(() => {
     const newCustomizationsFromUrl: CustomizationsData  = {
-      highlightedAssignments: [],
+      hiddenAssignments: [],
       highlightedSkills: [],
+      id: ""
     }
     const urlSearchParams = new URLSearchParams(window.location.search)
     for (const key in newCustomizationsFromUrl) {
       if (urlSearchParams.get(key)) {
         newCustomizationsFromUrl[key] = decodeURIComponent(urlSearchParams.get(key)).split(",")
       }
+    }
+    if (!newCustomizationsFromUrl.id && !newCustomizationsFromUrl.hiddenAssignments.length && !newCustomizationsFromUrl.highlightedSkills.length) {
+      newCustomizationsFromUrl.id === uuid()
     }
     setCustomizations(newCustomizationsFromUrl)
   }, [setCustomizations])
@@ -46,12 +59,17 @@ export function CustomizationsContextProvider({children}: PropsWithChildren) {
   }, [updateCustomizations, customizations])
 
   const resetAssignment: Customizations["resetAssignment"] = useCallback((assignment: string) => {
-    customizations.highlightedSkills.splice(customizations.highlightedAssignments.indexOf(assignment), 1),
+    customizations.highlightedSkills.splice(customizations.hiddenAssignments.indexOf(assignment), 1),
     updateCustomizations(customizations)
   }, [customizations, updateCustomizations])
 
-  const highlightAssignment: Customizations["highlightAssignment"] = useCallback((assignment: string) => {
-    customizations.highlightedAssignments.push(assignment)
+  const toggleHideAssignment: Customizations["toggleHideAssignment"] = useCallback((assignment: string) => {
+    if (customizations.hiddenAssignments.includes(assignment)) {
+      customizations.hiddenAssignments.splice(customizations.hiddenAssignments.indexOf(assignment), 1)
+    }
+    else {
+      customizations.hiddenAssignments.push(assignment)
+    }
     updateCustomizations(customizations)
   }, [updateCustomizations, customizations])
 
@@ -63,7 +81,7 @@ export function CustomizationsContextProvider({children}: PropsWithChildren) {
   }, [updateCustomizations, customizations])
 
   return <CustomizationsContext.Provider value={{
-    highlightAssignment,
+    toggleHideAssignment,
     highlightSkill,
     resetAssignment,
     resetSkill,

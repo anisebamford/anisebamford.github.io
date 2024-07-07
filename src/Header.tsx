@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ResumeContext } from "./ResumeContext";
 import styled from "styled-components";
 import { MainTitle } from "./MainTitle";
