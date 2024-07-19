@@ -8,6 +8,7 @@ import { Phone } from "./Phone";
 import { Email } from "./Email";
 import { QR } from "./QR";
 import { Section } from "./Section";
+import { BotBait } from "./BotBait";
 
 const HeaderStyle = styled.div`
   display: grid;
@@ -29,6 +30,7 @@ export function Header() {
   return <Section>
     <HeaderStyle>
       <HeaderTextStyle>
+      <BotBait />
       <MainTitle>{resume.name}</MainTitle>
       <span>{resume.pronouns}</span>
       <span>{resume.address}</span>
