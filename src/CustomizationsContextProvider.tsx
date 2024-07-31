@@ -74,11 +74,9 @@ type CustomizationsData = Omit<Customizations,
   }, [updateCustomizations, customizations])
 
   const highlightSkill: Customizations["highlightSkill"] = useCallback((skill: string) => {
-    if (customizations.highlightedSkills.length < 5) {
-      customizations.highlightedSkills.push(skill)
-      updateCustomizations(customizations)  
-    }
-  }, [updateCustomizations, customizations])
+  customizations.highlightedSkills.push(skill)
+  updateCustomizations(customizations)  
+}, [updateCustomizations, customizations])
 
   return <CustomizationsContext.Provider value={{
     toggleHideAssignment,
