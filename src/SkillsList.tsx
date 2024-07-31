@@ -25,15 +25,7 @@ const SkillsStyle = styled.ul`
 `
 
 export function SkillsList({skills, SkillComponent}: {skills: string[], SkillComponent: JSXElementConstructor<{skill: string}>}) {
-  const ref = useRef<HTMLUListElement>();
-  const [leftEdge, setLeftEdge] = useState(0)
-  useEffect(() => {
-    if (ref.current) {
-      setLeftEdge(ref.current.getBoundingClientRect().left)
-    }
-  }, [ref, setLeftEdge])
-
   return <SkillsStyle ref={ref}>
-    {skills.map((skill) => <SeparatedListItem startLeftPos={leftEdge} key={skill}><SkillComponent skill={skill} /></SeparatedListItem>)}
+    {skills.map((skill) => <li key={skill}><SkillComponent skill={skill} /></li>)}
   </SkillsStyle>
 }
