@@ -22,6 +22,14 @@ const SkillsListStyle = styled.ul`
   }
   list-style: none;
   justify-content: center;
+  &>* {
+    padding-left: var(--text-spacing, 1rem);
+    padding-right: var(--text-spacing, 1rem);
+    @media print {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 `
 
 export function SkillsList({skills, SkillComponent}: {skills: string[], SkillComponent: JSXElementConstructor<{skill: string}>}) {
