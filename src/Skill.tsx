@@ -6,6 +6,10 @@ export const SkillStyle = styled.span`
   color: var(--text-color, black);
   font-family: var(--skill-font, --text-font, monospace);
   font-size: 0.8rem;
+  @media print {
+    font-size:  0.1rem;
+    color: var(--background-color, white);
+  }
 `
 
 export function Skill({skill}: {skill: string}) {
