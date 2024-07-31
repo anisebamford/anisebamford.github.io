@@ -29,6 +29,7 @@ const MainStyles = styled.div`
   --title-font: title;
   --primary-color: ${colorPrimary};
   --secondary-color: ${colorSecondary};
+  --background-color: white;
   font-family: text;
   color: var(--text-color, black);
   margin: calc(var(--text-spacing) * 2) calc(var(--text-spacing) * 2);
