@@ -10,7 +10,7 @@ export function Skills() {
   const {skills} = useContext(ResumeContext)
   const {highlightedSkills} = useContext(CustomizationsContext);
 
-  const filteredSkills = skills.filter((skill: string) => !highlightedSkills.includes(skill))
+  const filteredSkills = skills.filter((skill: string) => !highlightedSkills.includes(skill)).sort()
 
   return <div>
     <SectionTitle>Skills</SectionTitle>
