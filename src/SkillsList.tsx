@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, JSXElementConstructor } from "react
 import styled from "styled-components";
 import { SeparatedListItem } from "./SeparatedListItem";
 
-const SkillsStyle = styled.ul`
+const SkillsListStyle = styled.ul`
   display: flex;
   flex-direction: column;
   @media screen and (min-width: 360px) {
@@ -25,7 +25,7 @@ const SkillsStyle = styled.ul`
 `
 
 export function SkillsList({skills, SkillComponent}: {skills: string[], SkillComponent: JSXElementConstructor<{skill: string}>}) {
-  return <SkillsStyle ref={ref}>
+  return <SkillsListStyle>
     {skills.map((skill) => <li key={skill}><SkillComponent skill={skill} /></li>)}
-  </SkillsStyle>
+  </SkillsListStyle>
 }
