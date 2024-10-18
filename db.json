@@ -11,6 +11,16 @@
   "professionalSummary": "I’m a lifelong computer nerd with a passion for clean, tested code and streamlined automation. I have a broad range of experience with both frontend and backend javascript and typescript systems, but my heart belongs to API-driven React apps.",
   "jobs": [
     {
+      "company": "Harbor 360",
+      "location": "Alaska",
+      "position": "Front Desk Agent / Breakfast Host",
+      "start": "September 2024",
+      "end": "present"
+      "accomplishments": [
+        "I set new standards for cleanliness in breakfast."
+      ]
+    },
+    {
       "company": "Xolv.io",
       "location": "California",
       "position": "Web Developer",
