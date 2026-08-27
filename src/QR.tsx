@@ -17,8 +17,8 @@ export function QR() {
 
   useEffect(() => {
     if (ref.current) {
-      qrcode.toCanvas(ref.current, `${resume.website}/${resume.overrideKey}`, {width: 125, color: {dark: colorPrimary}})
+      qrcode.toCanvas(ref.current, `${resume.website}/?k=${resume.path}`, {width: 125, color: {dark: colorPrimary}})
     }
-  }, [ref, resume.website, resume.overrideKey])
+  }, [ref, resume.website, resume.path])
   return <Style><canvas width="125" height="125" ref={ref}/></Style>
 }

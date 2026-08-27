@@ -31,7 +31,7 @@ const Accomplishment = styled.div`
   grid-template-columns: 1.5rem 100%;
 `
 
-export function Assignment({assignment, key}: {assignment: TAssignment, key: string}) {
+export function Assignment({assignment}: {assignment: TAssignment}) {
   const {switchAssignmentState} = useContext(ResumeContext)
   const {company, location, start, end, position, accomplishments, state} = assignment;
 

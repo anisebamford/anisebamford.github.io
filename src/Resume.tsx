@@ -32,7 +32,11 @@ const MainStyles = styled.div`
   font-family: text;
   color: var(--text-color, black);
   margin: calc(var(--text-spacing) * 2) calc(var(--text-spacing) * 2);
-  max-width: 960px
+  max-width: 960px;
+  padding: 0 calc(50vw - 480px);
+  @media screen and (max-width: 1000px) {
+    padding: 0 40px;
+  }
 `
 
 export function Resume({customizationKey}: {customizationKey: string}) {

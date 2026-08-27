@@ -11,17 +11,19 @@
     "website": "anisebamford.github.io",
     "professionalSummary": "I’m a lifelong computer nerd with a passion for clean, tested code and streamlined automation. I have a broad range of experience with both frontend and backend javascript and typescript systems, but my heart belongs to API-driven React apps.",
     "jobs": {
-      "h360": {
-        "company": "Harbor 360",
-        "location": "Alaska",
-        "position": "Front Desk Agent / Breakfast Host",
+      "Harbor 360": {
+        "company": "Harbor 360 Hotel & Gateway Hotel",
+        "location": "Seward, Alaska",
+        "position": "Breakfast Supervisor",
         "start": "September 2024",
         "end": "present",
         "accomplishments": [
-          "I set new standards for cleanliness in breakfast."
+          "I coordinated with upper management to improve breakfast service.",
+          "I oversaw a team of long and short term breakfast hosts to maintain high standards for cleanliness and presentation.",
+          "I ensured that both hotels had the necessary supplies and equipment to serve breakfast to all guests."
         ]
       },
-      "xolvio": {
+      "Xolv.io": {
         "company": "Xolv.io",
         "location": "California",
         "position": "Web Developer",
@@ -32,7 +34,7 @@
           "I developed several sites for a major video game developer using automated server side rendering and caching to eliminate as much latency as possible for their consumers. Additionally, I reimplemented several overbuilt components of the site to improve both performance and reusability."
         ]
       },
-      "ba": {
+      "Binary Agents": {
         "company": "Binary Agents",
         "location": "Oregon",
         "position": "Web Developer",
@@ -43,7 +45,7 @@
           "I led the development of a specialized ERP platform built on a custom stack including Dgraph, NodeJs, Express, graphQl, and React. During the course of the project, I architected the data security systems that the project was started to implement."
         ]
       },
-      "brm": {
+      "Bob's Red Mill": {
         "company": "Bob's Red Mill",
         "location": "Oregon",
         "start": "January 2016",
@@ -54,7 +56,7 @@
           "I provided logistical support to the entire floor to minimize downtime for any station."
         ]
       },
-      "hiex": {
+      "Holiday Inn Express": {
         "company": "Holiday Inn Express",
         "location": "Idaho",
         "start": "September 2014",
@@ -65,7 +67,7 @@
           "I maintained the property overnight, handling guest issues, closed the business day, preparing facilities for the next day, and tidying the property."
         ]
       },
-      "bw+": {
+      "Best Western Plus": {
         "company": "Best Western Plus",
         "location": "Idaho",
         "start": "March 2012",
@@ -75,7 +77,7 @@
           "I maintained the property overnight, handling guest issues, closed the business day, preparing facilities for the next day, and tidying the property."
         ]
       },
-      "bdm": {
+      "Black Dog Machine": {
         "company": "Black Dog Machine",
         "location": "Idaho",
         "start": "June 2010",
@@ -146,5 +148,10 @@
       }
     ]
   },
-  "customizations": {}
+  "customizations": {
+    "foo": {
+      "highlightedSkills": ["AWS"],
+      "professionalSummary": "Just a silly lil guy"
+    }
+  }
 }
