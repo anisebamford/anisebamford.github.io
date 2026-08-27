@@ -1,5 +1,7 @@
 import {createContext} from "react"
 
+export type AssignmentState = "hidden" | "mini" | "full"
+
 export type Assignment = {
   company: string,
   start: string,
@@ -7,11 +9,13 @@ export type Assignment = {
   position: string,
   location: string,
   accomplishments: string[],
+  state?: AssignmentState,
 }
 
 export type Resume = {
+  highlightedSkills?: string[],
   skills: string[],
-  jobs: Assignment[],
+  jobs: Record<string, Assignment>,
   professionalSummary: string,
   name: string,
   pronouns: string,
@@ -31,9 +35,17 @@ export type Resume = {
   }[]
 }
 
-export const ResumeContext = createContext<Resume>({
+export type OverrideFunctions = {
+  setField: <T extends keyof Resume = keyof Resume>(field: T, value:  Resume[T]) => void,
+  switchAssignmentState: (assignmentKey: string) => void,
+  toggleHighlightSkill: (skill: string) => void,
+  path?: string
+}
+
+export const ResumeContext = createContext<Resume & OverrideFunctions>({
+  highlightedSkills: [],
   skills: [],
-  jobs: [],
+  jobs: {},
   professionalSummary: "",
   name: "Anise Bamford",
   pronouns: "She/They",
@@ -45,4 +57,7 @@ export const ResumeContext = createContext<Resume>({
   phone: "(503) 327-6775",
   website: "",
   education: [],
+  setField: <T extends keyof Resume = keyof Resume>(field: T, value: Resume[T]) => {},
+  switchAssignmentState: (assignmentKey: string) => {},
+  toggleHighlightSkill: (skill: string) => {}
 })

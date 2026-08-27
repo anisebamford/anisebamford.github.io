@@ -4,7 +4,6 @@ import { Skills } from "./Skills";
 import { Reset } from "styled-reset";
 import styled from "styled-components"
 import { Jobs } from "./Jobs";
-import { CustomizationsContextProvider } from "./CustomizationsContextProvider";
 import { Header } from "./Header";
 import { ProfessionalSummary } from "./ProfessionalSummary";
 import { Section } from "./Section";
@@ -33,19 +32,18 @@ const MainStyles = styled.div`
   font-family: text;
   color: var(--text-color, black);
   margin: calc(var(--text-spacing) * 2) calc(var(--text-spacing) * 2);
+  max-width: 960px
 `
 
-export function Resume() {
-  return <ResumeContextProvider>
-    <CustomizationsContextProvider>
-      <Reset />
-      <MainStyles>
-        <Header />
-        <Section><ProfessionalSummary /></Section>
-        <Section><Skills /></Section>
-        <Section><Jobs /></Section>
-        <Education />
-      </MainStyles>
-    </CustomizationsContextProvider>
+export function Resume({customizationKey}: {customizationKey: string}) {
+  return <ResumeContextProvider customizationKey={customizationKey}>
+    <Reset />
+    <MainStyles>
+      <Header />
+      <Section><ProfessionalSummary /></Section>
+      <Section><Skills /></Section>
+      <Section><Jobs /></Section>
+      <Education />
+    </MainStyles>
   </ResumeContextProvider>
 }

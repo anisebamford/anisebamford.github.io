@@ -1,6 +1,6 @@
 import React, { useCallback, useContext } from "react"
 import styled from "styled-components"
-import { CustomizationsContext } from "./CustomizationsContext"
+import { ResumeContext } from "./ResumeContext"
 
 export const SkillStyle = styled.span`
   color: var(--text-color, black);
@@ -13,9 +13,9 @@ export const SkillStyle = styled.span`
 `
 
 export function Skill({skill}: {skill: string}) {
-  const {highlightSkill} = useContext(CustomizationsContext)
+  const {toggleHighlightSkill} = useContext(ResumeContext)
   const onClick = useCallback(() => {
-      highlightSkill(skill)
-  }, [highlightSkill])
+      toggleHighlightSkill(skill)
+  }, [toggleHighlightSkill])
   return <SkillStyle onClick={onClick} role="button" tabIndex={0} aria-pressed={false} >{skill}</SkillStyle>
 }

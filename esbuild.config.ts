@@ -28,7 +28,7 @@ async function build() {
   const options = ({
     entryPoints: ['src/app.tsx'],
     bundle: true,
-    minify: !isDev,
+    minify: false,
     format: 'cjs',
     sourcemap: isDev,
     outfile: `public/index-${token}.js`,

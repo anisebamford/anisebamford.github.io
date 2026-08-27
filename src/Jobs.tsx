@@ -7,6 +7,6 @@ export function Jobs() {
   const {jobs} = useContext(ResumeContext);
   return <div>
     <SectionTitle>Experience</SectionTitle>
-    {jobs.map((job, index) => <Assignment assignment={job} key={index} />)}
+    {Object.keys(jobs).map((job, index) => <Assignment assignment={jobs[job]} key={job} />)}
   </div>
 }

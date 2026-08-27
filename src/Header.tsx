@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { ResumeContext } from "./ResumeContext";
 import styled from "styled-components";
 import { MainTitle } from "./MainTitle";
-import { CustomizationsContext } from "./CustomizationsContext";
 import { Link } from "./Link";
 import { Phone } from "./Phone";
 import { Email } from "./Email";
@@ -26,7 +25,6 @@ const HeaderTextStyle = styled.div`
 
 export function Header() {
   const resume = useContext(ResumeContext);
-  const customizations = useContext(CustomizationsContext);
   return <Section>
     <HeaderStyle>
       <HeaderTextStyle>
@@ -36,7 +34,7 @@ export function Header() {
       <span>{resume.address}</span>
       <Email address={resume.email} />
       <Phone number={resume.phone} />
-      <Link href={`${resume.website}/?${customizations.queryString}`} title={resume.website} icon="Website.svg" />
+      <Link href={`${resume.website}/${resume.path}`} title={resume.website} icon="Website.svg" />
       <Link href={resume.linkedin} icon="LinkedIn.svg"/>
       <Link href={resume.github} icon="Github.svg"/>
       </HeaderTextStyle>

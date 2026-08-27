@@ -1,14 +1,13 @@
 import React, { useContext } from "react"
 import { ResumeContext } from "./ResumeContext"
 import { SectionTitle } from "./SectionTitle"
-import { CustomizationsContext } from "./CustomizationsContext"
 import { SkillsList } from "./SkillsList"
 import { HighlightedSkill } from "./HighlightedSkill"
 import { Skill } from "./Skill"
 
 export function Skills() {
   const {skills} = useContext(ResumeContext)
-  const {highlightedSkills} = useContext(CustomizationsContext);
+  const {highlightedSkills} = useContext(ResumeContext);
 
   const filteredSkills = skills.filter((skill: string) => !highlightedSkills.includes(skill)).sort()
 

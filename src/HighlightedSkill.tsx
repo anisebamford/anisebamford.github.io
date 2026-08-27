@@ -1,6 +1,6 @@
 import React, { ReactEventHandler, useCallback, useContext } from "react"
 import styled from "styled-components"
-import { CustomizationsContext } from "./CustomizationsContext"
+import { ResumeContext } from "./ResumeContext"
 
 export const SkillStyle = styled.span`
   display: flex;
@@ -16,10 +16,10 @@ export const SkillStyle = styled.span`
 `
 
 export function HighlightedSkill({skill}: {skill: string}) {
-  const {resetSkill} = useContext(CustomizationsContext)
+  const {toggleHighlightSkill} = useContext(ResumeContext)
   const onClick = useCallback(() => {
-      resetSkill(skill)
-  }, [resetSkill])
+      toggleHighlightSkill(skill)
+  }, [toggleHighlightSkill])
   const onError: ReactEventHandler<HTMLImageElement> = function (err) {
     (err.target as HTMLImageElement).style.display = "none"
   }
