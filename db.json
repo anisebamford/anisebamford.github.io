@@ -152,6 +152,11 @@
     "foo": {
       "highlightedSkills": ["AWS"],
       "professionalSummary": "Just a silly lil guy"
+    },
+    "hotel": {
+      "title": "Breakfast Supervisor",
+      "highlightedSkills": ["Microsoft Word", "Microsoft Excel", "Microsoft Outlook", "MySQL"],
+      "professionalSummary": "I have over a decade of experience in all aspects of hotel operations. I strive to exceed expectations in my roles, to set attainable yet ambitious goals and to always continue to learn. I believe I am a valuable asset to any team because not only do I strive to improve myself, I challenge myself to find the excellence in others."
     }
   }
 }
