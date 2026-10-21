@@ -37,6 +37,9 @@ const MainStyles = styled.div`
   @media screen and (max-width: 1000px) {
     padding: 0 40px;
   }
+  @page{
+    margin: 20mm 10mm;
+  }
 `
 
 export function Resume({customizationKey}: {customizationKey: string}) {
